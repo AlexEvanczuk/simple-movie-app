@@ -1,4 +1,13 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require './environments'
+require 'json'
+require_relative './helpers/movie_helper'
+
+require 'pry'
+
+class Movie < ActiveRecord::Base
+end
 
 # Configure BetterErrors in middleware stack
 configure :development do
@@ -16,6 +25,19 @@ post '/' do
   'message received'
 end
 
+post '/search_movies' do
+  content_type :json
+  query_string = params['query_string']
+  page = params['page']
+  data = MovieHelper.search_movies(query_string, page)
+  return data.to_json
+end
+
+post '/get_movie_details' do
+  content_type :json
+  data = MovieHelper.get_movie_information(params['imdb_id'])
+  return data.to_json
+end
 
 get 'favorites' do
   response.header['Content-Type'] = 'application/json'

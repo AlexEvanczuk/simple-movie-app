@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+#application-container {
+    padding: 25px;
+}
+
 a {
     color: #4183c4;
     text-decoration: none;
@@ -49,4 +53,121 @@ p, ul {
 
 ul {
     padding-left: 30px;
+}
+
+.clickable-thumbnail-overlay {
+    position:absolute;
+    top:0;
+    background:rgba(0,0,0,.75);
+    text-align:left;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    padding: 10px;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+}
+
+.clickable-thumbnail {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin:10px;
+    border: 1px solid rgba(0,0,0,.75);
+    height: 300px;
+}
+
+.non-clickable-thumbnail {
+    position: relative;
+    display: inline-block;
+    margin:10px;
+    border: 1px solid rgba(0,0,0,.75);
+}
+
+.clickable-thumbnail:hover .clickable-thumbnail-overlay {
+    opacity:1;
+}
+
+.clickable-thumbnail-overlay-text {
+    font-family:Helvetica;
+    font-weight:900;
+    color:rgba(255,255,255,.85);
+    font-size:24px;
+}
+
+#search-container {
+    display:flex;
+    padding: 10px;
+}
+
+.search-input {
+    height: 30px;
+    width: 270px;
+    font-size: 22px;
+    padding: 7px;
+    font-family: Helvetica;
+    border-radius: 6px;
+    border: 1px solid #bfbfbf;
+}
+
+.movie-query-button {
+    border: 1px solid #bfbfbf;
+    width: 200px;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 3px;
+    border-radius: 6px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.movie-query-button:hover{
+    background-color: aliceblue;
+}
+
+#modal {
+    display:none;
+    z-index: 9000;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 440px;
+    background-color: #fff;
+    border-radius: 17px;
+    padding: 30px;
+}
+
+#modal-backdrop {
+    display:none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    opacity: .7;
+    z-index: 8000;
+}
+
+.move-poster {
+    border: 1px solid black;
+}
+
+.modal-section {
+    display: inline-block;
+    padding: 10px;
+    overflow-y: auto;
+    height: 320px;
+    width: 220px;
+    font-size: 11px;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
 }
