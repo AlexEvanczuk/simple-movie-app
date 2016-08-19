@@ -6,9 +6,6 @@ require_relative './helpers/movie_helper'
 
 require 'pry'
 
-class FavoriteMovies < ActiveRecord::Base
-end
-
 # Configure BetterErrors in middleware stack
 configure :development do
   require 'better_errors'
