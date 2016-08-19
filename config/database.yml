@@ -1,0 +1,12 @@
+development:
+  development:
+  adapter: postgresql
+  host: localhost
+  database: development
+  encoding: UTF8
+
+test:
+  adapter: postgresql
+  host: localhost
+  database: test        # or whatever the name is
+  encoding: UTF8

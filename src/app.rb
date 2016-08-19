@@ -6,7 +6,7 @@ require_relative './helpers/movie_helper'
 
 require 'pry'
 
-class Movie < ActiveRecord::Base
+class FavoriteMovies < ActiveRecord::Base
 end
 
 # Configure BetterErrors in middleware stack
@@ -18,13 +18,10 @@ end
 
 # Root application
 get '/' do
-  File.read('./src/views/index.html')
+  send_file './src/views/index.html'
 end
 
-post '/' do
-  'message received'
-end
-
+# Search for movies matching a search string
 post '/search_movies' do
   content_type :json
   query_string = params['query_string']
@@ -33,6 +30,7 @@ post '/search_movies' do
   return data.to_json
 end
 
+# Return details of a movie given an imdb_id
 post '/get_movie_details' do
   content_type :json
   data = MovieHelper.get_movie_information(params['imdb_id'])
@@ -44,6 +42,7 @@ get 'favorites' do
   File.read('data.json')
 end
 
+# Returns all favorites for a given user
 get '/favorites' do
   file = JSON.parse(File.read('data.json'))
   return 'Invalid Request' unless params[:name] && params[:oid]

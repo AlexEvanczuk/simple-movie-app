@@ -12,6 +12,8 @@ gem 'json'
 gem 'pry'
 # Allows us to easily make http requests
 gem 'httparty'
+# Sinatra shell
+gem 'tux'
 
 group :development do
   # Creates more useful error pages
@@ -19,17 +21,7 @@ group :development do
   gem 'binding_of_caller'
   # Reloads app on any changes for faster development
   gem 'rerun'
-  # Sqlite for development
-  gem 'sqlite3'
-  # Sinatra shell
-  gem 'tux'
 end
 
-group :development do
-
-end
-
-group :production do
-  # PostgreSQL for production
-  gem 'pg'
-end
+# PostgreSQL database
+gem 'pg'
