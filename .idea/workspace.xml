@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="262177ae-2a66-4eef-9d76-d3e6eb34ea56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20160814180437_create_movies.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/environments.rb" afterPath="$PROJECT_DIR$/environments.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.rb" afterPath="$PROJECT_DIR$/src/app.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
     </list>
     <ignored path="General Assembly Code Challenge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,7 +120,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="20160819055526_favorite_movies.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="20160819055526_favorite_movies.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/db/migrate/20160819055526_favorite_movies.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="135">
@@ -141,6 +135,16 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
                   <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database.yml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config/database.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -195,6 +199,7 @@
         <option value="$PROJECT_DIR$/db/migrate/20160819055526_favorite_movies.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160819060121_create_posts.rb" />
         <option value="$PROJECT_DIR$/src/app.rb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -486,12 +491,12 @@
       <workItem from="1471156234826" duration="13592000" />
       <workItem from="1471230234187" duration="876000" />
       <workItem from="1471247324195" duration="2000" />
-      <workItem from="1471397998310" duration="13711000" />
+      <workItem from="1471397998310" duration="13896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28181000" />
+    <option name="totallyTimeSpent" value="28366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -828,14 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160818190312_FavoriteMovies.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -908,14 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160819055526_favorite_movies.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -928,6 +917,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding />
         </state>
       </provider>
