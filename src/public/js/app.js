@@ -1,16 +1,14 @@
-// TODO:
-// 1. Load favorites
-
-// Continue pulling movies until all movies have finished loading
-function searchMovies(e) {
-  // Once a search is executed, take the following steps:
-  // 1. Clear out previous results
+// Show movies this user has favorited
+function showFavorites() {
   clearMovies();
+  fetchMovies("", true, 0, ((movies) => (insertMovies(movies))));
+}
 
-  // 2. Fetch all matching movies and insert them into the movie list
+// Search for movies matching a search string and show results
+function searchMovies(e) {
+  clearMovies();
   var queryString = document.getElementsByName("query_string")[0].value;
-  var page = 1;
-  fetchMovies(queryString, page, ((movies) => (insertMovies(movies))));
+  fetchMovies(queryString, false, 0, ((movies) => (insertMovies(movies))));
 }
 
 // Inserts movies objects into the DOM
@@ -20,14 +18,15 @@ function insertMovies(movies) {
   }
 }
 
-// Removes all movies from the list
+// Removes all movies from the list (favorited or searched)
 function clearMovies() {
   const container = document.getElementById("movie-container");
   container.innerHTML = "";
 }
-// Fetches all movies in a given page.  Will continue to fetch until endpoint
-// returns no results
-function fetchMovies(query_string, page, callback) {
+
+// Fetches all movies, either by query string or favorites
+// Will continue to fetch until endpoint returns no results
+function fetchMovies(search_string, favoritesOnly, page, callback) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -35,11 +34,16 @@ function fetchMovies(query_string, page, callback) {
       callback(response.movies);
       // In case something breaks in the API, we want to stop rendering after 100 pages
       if(response.more_results && page <= 100){
-        fetchMovies(query_string, page + 1, callback);
+        fetchMovies(query_string, favoritesOnly, page + 1, callback);
       };
     }
   };
-  uri =  "search_movies?query_string=" + query_string + "&page=" + page
+
+  if(favoritesOnly) {
+    uri =  "get_favorites?page=" + page;
+  } else {
+    uri =  "search_movies?query_string=" + search_string + "&page=" + page
+  }
   xhttp.open("POST", uri, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send();
@@ -55,6 +59,15 @@ function fetchMovieDetails(imdbID, callback) {
     }
   };
   uri =  "get_movie_details?imdb_id=" + imdbID;
+  xhttp.open("POST", uri, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}
+
+// Favorites individual movie for a user
+function favoriteMovie(imdbID) {
+  var xhttp = new XMLHttpRequest();
+  uri =  "favorite_movie?imdb_id=" + imdbID;
   xhttp.open("POST", uri, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send();
@@ -109,7 +122,7 @@ function openModal(movie) {
           "<div class='additional-details'>Loading additional details, please be patient!</div>" +
         "<div><a href='http://www.imdb.com/title/" + movie.imdbID + "'/>View on IMDB</a></div>" +
         // TODO: fix this
-        "<div><a href='http://www.imdb.com/title/" + movie.imdbID + "'/>Favorite this movie</a></div>" +
+        "<div><a onclick='favoriteMovie(\"" + movie.imdbID + "\")'/>Favorite this movie</a></div>" +
       "</div>" +
     "</div>";
 

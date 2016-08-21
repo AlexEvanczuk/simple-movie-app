@@ -14,6 +14,10 @@ gem 'pry'
 gem 'httparty'
 # Sinatra shell
 gem 'tux'
+# Password encryption
+gem 'bcrypt'
+# User authentication
+gem 'sinatra-simple-authentication'
 
 group :development do
   # Creates more useful error pages

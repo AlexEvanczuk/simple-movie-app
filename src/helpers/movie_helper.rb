@@ -12,7 +12,8 @@ module MovieHelper
     base_uri 'http://www.omdbapi.com/'
 
     # Use OMDb API to search movies based on query string
-    ret = get('/',{ query: {s: query_string, page: page} })
+    # Note they use 1-based indexing instead of 0-based for pages, so change page accordingly
+    ret = get('/',{ query: {s: query_string, page: page-1} })
 
     if ret["Error"] && ret["Error"] == "Movie not found!"
       return {:movies => [], :more_results => false}
@@ -30,5 +31,18 @@ module MovieHelper
     # Use OMDb API to search movies based on query string
     ret = get('/',{ query: {i: imdb_id, plot: 'short', r: 'json', tomatoes: true} })
     return ret
+  end
+
+  # Returns movie favorite information for a user
+  def self.get_movie_favorites(user, page)
+    favorites = FavoriteMovies.where(user_id: user.id).map(&:imdb_id)
+    paginated_results = favorites.each_slice(10).to_a[page.to_i]
+    next_page_exists = !favorites.each_slice(10).to_a[page.to_i+1].nil?
+    if(paginated_results)
+      movies = paginated_results.map{|imdb_id| self.get_movie_information(imdb_id)}
+      return {:movies => movies, :more_results => next_page_exists}
+    else
+      return {:movies => [], :more_results => false}
+    end
   end
 end

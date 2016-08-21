@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './environments'
+# require './environments'
+# require './models/User'
+require 'sinatra/simple-authentication'
+
 require 'json'
 require_relative './helpers/movie_helper'
 
@@ -8,6 +11,8 @@ require 'pry'
 
 class FavoriteMovies < ActiveRecord::Base
 end
+
+register Sinatra::SimpleAuthentication
 
 # Configure BetterErrors in middleware stack
 configure :development do
@@ -18,11 +23,13 @@ end
 
 # Root application
 get '/' do
+  login_required
   send_file './src/views/index.html'
 end
 
-# Search for movies matching a search string
+# Search for movies matching a search string or imdb id
 post '/search_movies' do
+  login_required
   content_type :json
   query_string = params['query_string']
   page = params['page']
@@ -30,24 +37,29 @@ post '/search_movies' do
   return data.to_json
 end
 
+# Saves a movie to favorites
+post '/favorite_movie' do
+  login_required
+  existing_favorites = FavoriteMovies.where(user_id: current_user.id, imdb_id: params["imdb_id"])
+  if existing_favorites.blank?
+    FavoriteMovies.create(user_id: current_user.id, imdb_id: params["imdb_id"])
+  end
+  content_type :json
+  return {success: true}.to_json
+end
+
 # Return details of a movie given an imdb_id
 post '/get_movie_details' do
+  login_required
   content_type :json
   data = MovieHelper.get_movie_information(params['imdb_id'])
   return data.to_json
 end
 
-get 'favorites' do
-  response.header['Content-Type'] = 'application/json'
-  File.read('data.json')
-end
-
-# Returns all favorites for a given user
-get '/favorites' do
-  file = JSON.parse(File.read('data.json'))
-  return 'Invalid Request' unless params[:name] && params[:oid]
-  movie = { name: params[:name], oid: params[:oid] }
-  file << movie
-  File.write('data.json',JSON.pretty_generate(file))
-  movie.to_json
+# Return all favorites for logged in user
+post '/get_favorites' do
+  login_required
+  content_type :json
+  data = MovieHelper.get_movie_favorites(current_user, params['page'])
+  return data.to_json
 end
