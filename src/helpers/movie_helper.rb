@@ -19,6 +19,31 @@ module MovieHelper
       return {:movies => [], :more_results => false}
     else
       more_results = ret['totalResults'].to_i >= page.to_i * 10
+
+      # IMDB does not allow remote linking to their images, so we need to download
+      # each image and host it
+      ret['Search'].each do |movie|
+        if movie['Poster'] == "N/A"
+          movie_poster_src = 'http://www.digitaltyrants.com/wp-content/uploads/question_movie_cover.jpg';
+          filename = "/tmp/default_poster.jpg"
+        else
+          movie_poster_src = movie['Poster'];
+          filename = "/tmp/#{movie['imdbID']}_poster.jpg"
+        end
+
+        if !File.exist? filename
+          File.open(filename, "wb") do |f|
+            f.binmode
+            f.write HTTParty.get(movie_poster_src).parsed_response
+            f.close
+          end
+        end
+
+        movie['Poster'] = filename;
+
+      end
+
+
       return {:movies => ret['Search'], :more_results => more_results}
     end
   end

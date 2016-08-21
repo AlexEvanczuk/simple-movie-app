@@ -63,3 +63,11 @@ post '/get_favorites' do
   data = MovieHelper.get_movie_favorites(current_user, params['page'])
   return data.to_json
 end
+
+# Return cached posters
+get '/tmp/:filename' do
+  filename = "/tmp/#{params["filename"]}"
+  if File.exist? filename
+    send_file filename
+  end
+end
