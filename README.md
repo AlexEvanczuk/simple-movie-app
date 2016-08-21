@@ -1,3 +1,18 @@
+## Alex Evanczuk: WDI Instructor Code Challenge
+This repo contains the data for the GA WDI Instructor code challenge.  The challenge prompt is below.
+
+The link to view this app live is here:
+[Simply Movie App](http://http://simple-movie-app.herokuapp.com/)
+
+This app is rather simple.  It is built on Sinatra using ActiveRecord to persist data and vanilla HTML/CSS/Javascript to allow the user to search and favorite movies.
+
+The app has a basic javascript file that contains a number of core functions, including user functions (e.g. search and favorite), DOM helper functions (e.g. clear results, insert movies, and open movie details modal), and ajax helper methods (e.g. fetch movies, fetch movie details).
+ 
+The app also has a basic controller to receive the ajax requests and serve data.
+There is also a movie helper module that interacts with the IMDB api in a way that is easy for the app controller to digest.
+Namely, it can search movies, get details for an individual movie, and check favorites for a user.
+Authentication is gone by the sintra-simple-authentication gem.  I did not modify or override any of its behavior, such as the provided User model or the login/logout template.
+
 ![GA Logo](https://raw.github.com/generalassembly/ga-ruby-on-rails-for-devs/master/images/ga.png)
 
 ## WDI Instructor Code Challenge

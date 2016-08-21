@@ -19,6 +19,7 @@ gem 'bcrypt'
 # User authentication
 gem 'sinatra-simple-authentication'
 
+# These gems are only to be used in development
 group :development do
   # Creates more useful error pages
   gem 'better_errors'
