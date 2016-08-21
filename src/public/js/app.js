@@ -1,106 +1,78 @@
+/*
+ * CONTAINER LOCATIONS
+ */
+const SEARCHED_MOVIE_CONTAINER = "searched-movie-container";
+const FAVORITED_MOVIE_CONTAINER = "favorited-movie-container";
+
+/*
+ * USER ACTIONS
+ */
+
 // Show movies this user has favorited
 function showFavorites() {
   clearMovies();
-  fetchMovies("", true, 0, ((movies) => (insertMovies(movies))));
+  showMovieContainer(FAVORITED_MOVIE_CONTAINER);
+  fetchMovies(null, "favorites", 0, ((movies) => (insertMovies(movies, FAVORITED_MOVIE_CONTAINER))));
 }
 
 // Search for movies matching a search string and show results
 function searchMovies(e) {
   clearMovies();
+  showMovieContainer(SEARCHED_MOVIE_CONTAINER);
   var queryString = document.getElementsByName("query_string")[0].value;
-  fetchMovies(queryString, false, 0, ((movies) => (insertMovies(movies))));
+  fetchMovies(queryString, "search", 0, ((movies) => (insertMovies(movies, SEARCHED_MOVIE_CONTAINER))));
 }
 
+/*
+ * DOM MANIPULATION HELPER METHODS
+ */
+
 // Inserts movies objects into the DOM
-function insertMovies(movies) {
+function insertMovies(movies, containerName) {
   for(var i = 0; i < movies.length; i++) {
-    insertMovie(movies[i]);
+    insertMovie(movies[i], containerName);
   }
 }
 
 // Removes all movies from the list (favorited or searched)
+// and hides both the saved and favorited movie containers
 function clearMovies() {
-  const container = document.getElementById("movie-container");
-  container.innerHTML = "";
+  const savedContainer = document.getElementById(SEARCHED_MOVIE_CONTAINER);
+  const favoritedContainer = document.getElementById(FAVORITED_MOVIE_CONTAINER);
+  savedContainer.innerHTML = "";
+  favoritedContainer.innerHTML = "";
+  savedContainer.style.display = 'none';
+  favoritedContainer.style.display = 'none';
 }
 
-// Fetches all movies, either by query string or favorites
-// Will continue to fetch until endpoint returns no results
-function fetchMovies(search_string, favoritesOnly, page, callback) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      response = JSON.parse(xhttp.responseText);
-      callback(response.movies);
-      // In case something breaks in the API, we want to stop rendering after 100 pages
-      if(response.more_results && page <= 100){
-        fetchMovies(search_string, favoritesOnly, page + 1, callback);
-      };
-    }
-  };
-
-  if(favoritesOnly) {
-    uri =  "get_favorites?page=" + page;
-  } else {
-    uri =  "search_movies?query_string=" + search_string + "&page=" + page
-  }
-  xhttp.open("POST", uri, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send();
-}
-
-// Gets individual movie details given an imdbID
-function fetchMovieDetails(imdbID, callback) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      response = JSON.parse(xhttp.responseText);
-      callback(response);
-    }
-  };
-  uri =  "get_movie_details?imdb_id=" + imdbID;
-  xhttp.open("POST", uri, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send();
-}
-
-// Favorites individual movie for a user
-function favoriteMovie(imdbID) {
-  var xhttp = new XMLHttpRequest();
-  uri =  "favorite_movie?imdb_id=" + imdbID;
-  xhttp.open("POST", uri, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send();
+// Shows the container holding searched or favorited movies
+function showMovieContainer(containerName) {
+  const container = document.getElementById(containerName);
+  container.style.display = 'block';
 }
 
 // Inserts a movie div into the movie container
 // This movie div displays the movie name when a user hovers over it,
 // and also displays a star that the user can click which will save the movie
-function insertMovie(movie) {
-  const container = document.getElementById("movie-container");
+function insertMovie(movie, containerName) {
+  const container = document.getElementById(containerName);
   const movieDiv = document.createElement('div');
   movieDiv.className = 'clickable-thumbnail';
 
   // Set the thumbnail of the movie to be the movie poster with a hoverable
   // overlay the contains the movie title and year
   movieThumbnail = getMoviePoster(movie) +
-    "<div class='clickable-thumbnail-overlay'>" +
+      "<div class='clickable-thumbnail-overlay'>" +
       "<span class='clickable-thumbnail-overlay-text'>" + movie.Title + ", " + movie.Year + "</span>" +
-    "</div>";
+      "</div>";
 
   movieDiv.innerHTML = movieThumbnail;
 
   // Add behavior for when a user clicks on the poster
-  movieDiv.addEventListener("click", (() => onClickPoster(movie)));
+  movieDiv.addEventListener("click", (() => openModal(movie)));
 
   // Add the movie to the end of our movie thumbnail list
   container.appendChild(movieDiv);
-}
-
-// Defines what action should be taken when a user clicks the movie poster
-// When the user clicks the poster, the modal should open up
-function onClickPoster(movie, e) {
-  openModal(movie);
 }
 
 // Opens and populates the modal corresponding to a movie
@@ -112,19 +84,17 @@ function openModal(movie) {
   modalBackdrop.style.display = 'block';
   modal.style.display = 'block';
   modalSrc = "<div class='close-modal'>Close &times;</div>" +
-    "<h2>" + movie.Title + "</h2>" +
-    "<div class='modal-body'>" +
+      "<h2>" + movie.Title + "</h2>" +
+      "<div class='modal-body'>" +
       "<div class='modal-section'>" +
-        getMoviePoster(movie) +
+      getMoviePoster(movie) +
       "</div>" +
       "<div class='modal-section'>" +
-        "<div>Year: " + movie.Year + "</div>" +
-          "<div class='additional-details'>Loading additional details, please be patient!</div>" +
-        "<div><a href='http://www.imdb.com/title/" + movie.imdbID + "'/>View on IMDB</a></div>" +
-        // TODO: fix this
-        "<div><a onclick='favoriteMovie(\"" + movie.imdbID + "\")'/>Favorite this movie</a></div>" +
+      "<div>Year: " + movie.Year + "</div>" +
+      "<div class='additional-details'>Loading additional details, please be patient!</div>" +
+      "<div><a href='http://www.imdb.com/title/" + movie.imdbID + "'/>View on IMDB</a></div>" +
       "</div>" +
-    "</div>";
+      "</div>";
 
   modal.innerHTML = modalSrc;
 
@@ -132,11 +102,18 @@ function openModal(movie) {
     const movieWebsite = response.Website == "N/A" ? null : response.Website;
     const websiteLink = movieWebsite ? "<div><a href='" + movieWebsite + "'/>Company Website</a></div>" : "";
     const additionalDetails = document.getElementsByClassName("additional-details")[0];
+    let favoriteLink = null;
+    if (response.currently_favorited) {
+      favoriteLink = "<div>This movie is one of your favorites!</div>"
+    } else {
+      favoriteLink = "<div><a onclick='favoriteMovie(\"" + movie.imdbID + "\")'/>Favorite this movie</a></div>"
+    }
     additionalDetails.innerHTML = "<div>" + response.Rated + ", " + response.Runtime + "</div>" +
-      "<div>" + response.Country + ", " + response.Language + ", " + response.Production + "</div>" +
-      "<div>" + response.Genre + "</div>" +
-      "<hr><div>" + response.Plot + "</div><hr>" +
-      websiteLink;
+        "<div>" + response.Country + ", " + response.Language + ", " + response.Production + "</div>" +
+        "<div>" + response.Genre + "</div>" +
+        "<hr><div>" + response.Plot + "</div><hr>" +
+        favoriteLink +
+        websiteLink;
   });
 
   // Make sure the close modal button works properly
@@ -171,4 +148,57 @@ function closeModal() {
   // Allow scrolling
   const body = document.getElementsByTagName("body")[0];
   body.style.overflow = 'auto';
+}
+
+/*
+ * SERVER AJAX METHODS
+ */
+
+// Fetches all movies, either by query string or favorites
+// Will continue to fetch until endpoint returns no results
+function fetchMovies(search_string, type, page, callback) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      response = JSON.parse(xhttp.responseText);
+      callback(response.movies);
+      // In case something breaks in the API, we want to stop rendering after 100 pages
+      if(response.more_results && page <= 100){
+        fetchMovies(search_string, type, page + 1, callback);
+      };
+    }
+  };
+
+  if(type == "favorites") {
+    uri =  "get_favorites?page=" + page;
+  } else {
+    uri =  "search_movies?query_string=" + search_string + "&page=" + page
+  }
+  xhttp.open("POST", uri, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}
+
+// Gets individual movie details given an imdbID
+function fetchMovieDetails(imdbID, callback) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      response = JSON.parse(xhttp.responseText);
+      callback(response);
+    }
+  };
+  uri =  "get_movie_details?imdb_id=" + imdbID;
+  xhttp.open("POST", uri, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}
+
+// Favorites individual movie for a user
+function favoriteMovie(imdbID) {
+  var xhttp = new XMLHttpRequest();
+  uri =  "favorite_movie?imdb_id=" + imdbID;
+  xhttp.open("POST", uri, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
 }

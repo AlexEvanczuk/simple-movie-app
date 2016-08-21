@@ -24,13 +24,16 @@ module MovieHelper
   end
 
   # Pulls information for a single movie
-  def self.get_movie_information(imdb_id)
+  def self.get_movie_information(user, imdb_id)
     # Set the base_uri used in requests for HTTPParty
     base_uri 'http://www.omdbapi.com/'
 
     # Use OMDb API to search movies based on query string
     ret = get('/',{ query: {i: imdb_id, plot: 'short', r: 'json', tomatoes: true} })
-    return ret
+
+    # Also include whether or not the current user has this movie favorited
+    currently_favorited = !FavoriteMovies.where(user_id: user.id, imdb_id: imdb_id).empty?
+    return ret.merge({currently_favorited: currently_favorited})
   end
 
   # Returns movie favorite information for a user
@@ -39,7 +42,7 @@ module MovieHelper
     paginated_results = favorites.each_slice(10).to_a[page.to_i]
     next_page_exists = !favorites.each_slice(10).to_a[page.to_i+1].nil?
     if(paginated_results)
-      movies = paginated_results.map{|imdb_id| self.get_movie_information(imdb_id)}
+      movies = paginated_results.map{|imdb_id| self.get_movie_information(user, imdb_id)}
       return {:movies => movies, :more_results => next_page_exists}
     else
       return {:movies => [], :more_results => false}

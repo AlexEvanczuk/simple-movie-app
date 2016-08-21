@@ -52,7 +52,7 @@ end
 post '/get_movie_details' do
   login_required
   content_type :json
-  data = MovieHelper.get_movie_information(params['imdb_id'])
+  data = MovieHelper.get_movie_information(current_user, params['imdb_id'])
   return data.to_json
 end
 
