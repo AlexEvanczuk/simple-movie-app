@@ -129,14 +129,7 @@ function openModal(movie) {
 
 // Given a movie object, returns an image of a movie
 function getMoviePoster(movie) {
-  let moviePosterSrc = null;
-  // Display a default poster if there is no one available
-  if (movie.Poster == "N/A") {
-    moviePosterSrc = 'http://www.digitaltyrants.com/wp-content/uploads/question_movie_cover.jpg';
-  } else {
-    moviePosterSrc = movie.Poster;
-  }
-  return "<img class='movie-poster' src=" + moviePosterSrc + " height='300' width='200' />"
+  return "<img class='movie-poster' src=" + movie.Poster + " height='300' width='200' />"
 }
 
 // Closes the modal

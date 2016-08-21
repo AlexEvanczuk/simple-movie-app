@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="262177ae-2a66-4eef-9d76-d3e6eb34ea56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.rb" afterPath="$PROJECT_DIR$/src/app.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helpers/movie_helper.rb" afterPath="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/js/app.js" afterPath="$PROJECT_DIR$/src/public/js/app.js" />
     </list>
     <ignored path="General Assembly Code Challenge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +28,21 @@
         <splitter split-orientation="vertical" split-proportion="0.49808916">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="app.rb" pinned="false" current-in-tab="true">
+              <file leaf-file-name="app.rb" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="272">
-                      <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+                    <state relative-caret-position="111">
+                      <caret line="58" column="30" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="30" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="movie_helper.rb" pinned="false" current-in-tab="false">
+              <file leaf-file-name="movie_helper.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/helpers/movie_helper.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="123">
-                      <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+                    <state relative-caret-position="2">
+                      <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -51,8 +51,8 @@
               <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/views/index.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="225">
-                      <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+                    <state relative-caret-position="210">
+                      <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
                       <folding>
                         <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                       </folding>
@@ -67,13 +67,13 @@
               <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="190">
-                      <caret line="182" column="25" selection-start-line="182" selection-start-column="25" selection-end-line="182" selection-end-column="25" />
+                    <state relative-caret-position="1125">
+                      <caret line="140" column="20" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
                       <folding>
                         <element signature="n#!!doc" expanded="true" />
                         <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
                         <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
-                        <marker date="1471813630000" expanded="true" signature="3067:3074" ph="×" />
+                        <marker date="1471814773000" expanded="true" signature="3067:3074" ph="×" />
                       </folding>
                     </state>
                   </provider>
@@ -193,10 +193,10 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160821184218_modify_favorites.rb" />
         <option value="$PROJECT_DIR$/src/views/index.html" />
-        <option value="$PROJECT_DIR$/src/public/js/app.js" />
         <option value="$PROJECT_DIR$/src/public/css/base.css" />
-        <option value="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
         <option value="$PROJECT_DIR$/src/app.rb" />
+        <option value="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
+        <option value="$PROJECT_DIR$/src/public/js/app.js" />
       </list>
     </option>
   </component>
@@ -547,12 +547,12 @@
       <workItem from="1471230234187" duration="876000" />
       <workItem from="1471247324195" duration="2000" />
       <workItem from="1471397998310" duration="25978000" />
-      <workItem from="1471813739901" duration="752000" />
+      <workItem from="1471813739901" duration="1047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41200000" />
+    <option name="totallyTimeSpent" value="41495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -604,13 +604,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/public/js/app.js</url>
-          <line>158</line>
+          <line>151</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/src/helpers/movie_helper.rb</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="6" />
@@ -674,7 +669,7 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
             <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
-            <marker date="1471813630000" expanded="true" signature="3067:3074" ph="×" />
+            <marker date="1471814773000" expanded="true" signature="3067:3074" ph="×" />
           </folding>
         </state>
       </provider>
@@ -752,7 +747,7 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
             <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
-            <marker date="1471813630000" expanded="true" signature="3067:3074" ph="×" />
+            <marker date="1471814773000" expanded="true" signature="3067:3074" ph="×" />
           </folding>
         </state>
       </provider>
@@ -897,16 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -923,32 +908,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/movie_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        <state relative-caret-position="2">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="182" column="25" selection-start-line="182" selection-start-column="25" selection-end-line="182" selection-end-column="25" />
+        <state relative-caret-position="1125">
+          <caret line="140" column="20" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
             <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
-            <marker date="1471813630000" expanded="true" signature="3067:3074" ph="×" />
+            <marker date="1471814773000" expanded="true" signature="3067:3074" ph="×" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>

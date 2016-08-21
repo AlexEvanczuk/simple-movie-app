@@ -23,29 +23,33 @@ module MovieHelper
       # IMDB does not allow remote linking to their images, so we need to download
       # each image and host it
       ret['Search'].each do |movie|
-        if movie['Poster'] == "N/A"
-          movie_poster_src = 'http://www.digitaltyrants.com/wp-content/uploads/question_movie_cover.jpg';
-          filename = "/tmp/default_poster.jpg"
-        else
-          movie_poster_src = movie['Poster'];
-          filename = "/tmp/#{movie['imdbID']}_poster.jpg"
-        end
-
-        if !File.exist? filename
-          File.open(filename, "wb") do |f|
-            f.binmode
-            f.write HTTParty.get(movie_poster_src).parsed_response
-            f.close
-          end
-        end
-
-        movie['Poster'] = filename;
-
+        self.cache_movie_poster(movie)
       end
-
 
       return {:movies => ret['Search'], :more_results => more_results}
     end
+  end
+
+  # Given a movie object returned by IMDB, cache its poster so it can be shown to the user
+  # since IMDB does not allow remote hot linking of their posters
+  def self.cache_movie_poster(movie)
+    if movie['Poster'] == "N/A"
+      movie_poster_src = 'http://www.digitaltyrants.com/wp-content/uploads/question_movie_cover.jpg';
+      filename = "/tmp/default_poster.jpg"
+    else
+      movie_poster_src = movie['Poster'];
+      filename = "/tmp/#{movie['imdbID']}_poster.jpg"
+    end
+
+    if !File.exist? filename
+      File.open(filename, "wb") do |f|
+        f.binmode
+        f.write HTTParty.get(movie_poster_src).parsed_response
+        f.close
+      end
+    end
+
+    movie['Poster'] = filename;
   end
 
   # Pulls information for a single movie
@@ -58,6 +62,7 @@ module MovieHelper
 
     # Also include whether or not the current user has this movie favorited
     currently_favorited = !FavoriteMovies.where(user_id: user.id, imdb_id: imdb_id).empty?
+    cache_movie_poster(ret)
     return ret.merge({currently_favorited: currently_favorited})
   end
 
