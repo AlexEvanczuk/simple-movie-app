@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="262177ae-2a66-4eef-9d76-d3e6eb34ea56" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helpers/movie_helper.rb" afterPath="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/js/app.js" afterPath="$PROJECT_DIR$/src/public/js/app.js" />
     </list>
     <ignored path="General Assembly Code Challenge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +23,7 @@
     <favorites_list name="General Assembly Code Challenge" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4698046">
+    <splitter split-orientation="horizontal" split-proportion="0.57637656">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.49808916">
           <split-first>
@@ -30,8 +31,8 @@
               <file leaf-file-name="app.rb" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                    <state relative-caret-position="167">
+                      <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
                       <folding />
                     </state>
                   </provider>
@@ -40,8 +41,8 @@
               <file leaf-file-name="movie_helper.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/helpers/movie_helper.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="166">
-                      <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+                    <state relative-caret-position="180">
+                      <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                       <folding>
                         <element signature="e#874#1171#0" expanded="false" />
                       </folding>
@@ -68,14 +69,11 @@
               <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+                    <state relative-caret-position="98">
+                      <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
                       <folding>
                         <element signature="n#!!block;n#showFavorites#0" expanded="false" />
-                        <element signature="n#!!block;n#searchMovies#0" expanded="false" />
-                        <element signature="n#!!block;n#insertMovies#0" expanded="false" />
                         <element signature="n#!!block;n#clearMovies#0" expanded="false" />
-                        <element signature="n#!!block;n#fetchMovies#0" expanded="false" />
                         <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
                         <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
                         <element signature="n#!!block;n#insertMovie#0" expanded="false" />
@@ -83,7 +81,7 @@
                         <element signature="n#!!block;n#openModal#0" expanded="false" />
                         <element signature="n#!!block;n#getMoviePoster#0" expanded="false" />
                         <element signature="n#!!block;n#closeModal#0" expanded="false" />
-                        <marker date="1471808711000" expanded="true" signature="4047:4054" ph="×" />
+                        <marker date="1471809546000" expanded="true" signature="4048:4055" ph="×" />
                       </folding>
                     </state>
                   </provider>
@@ -205,8 +203,8 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160821184218_modify_favorites.rb" />
         <option value="$PROJECT_DIR$/src/app.rb" />
-        <option value="$PROJECT_DIR$/src/public/js/app.js" />
         <option value="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
+        <option value="$PROJECT_DIR$/src/public/js/app.js" />
       </list>
     </option>
   </component>
@@ -556,12 +554,12 @@
       <workItem from="1471156234826" duration="13592000" />
       <workItem from="1471230234187" duration="876000" />
       <workItem from="1471247324195" duration="2000" />
-      <workItem from="1471397998310" duration="23560000" />
+      <workItem from="1471397998310" duration="23711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38030000" />
+    <option name="totallyTimeSpent" value="38181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -682,10 +680,7 @@
           <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
           <folding>
             <element signature="n#!!block;n#showFavorites#0" expanded="false" />
-            <element signature="n#!!block;n#searchMovies#0" expanded="false" />
-            <element signature="n#!!block;n#insertMovies#0" expanded="false" />
             <element signature="n#!!block;n#clearMovies#0" expanded="false" />
-            <element signature="n#!!block;n#fetchMovies#0" expanded="false" />
             <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
             <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
             <element signature="n#!!block;n#insertMovie#0" expanded="false" />
@@ -693,7 +688,7 @@
             <element signature="n#!!block;n#openModal#0" expanded="false" />
             <element signature="n#!!block;n#getMoviePoster#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
-            <marker date="1471808711000" expanded="true" signature="4047:4054" ph="×" />
+            <marker date="1471809546000" expanded="true" signature="4048:4055" ph="×" />
           </folding>
         </state>
       </provider>
@@ -780,10 +775,7 @@
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#showFavorites#0" expanded="false" />
-            <element signature="n#!!block;n#searchMovies#0" expanded="false" />
-            <element signature="n#!!block;n#insertMovies#0" expanded="false" />
             <element signature="n#!!block;n#clearMovies#0" expanded="false" />
-            <element signature="n#!!block;n#fetchMovies#0" expanded="false" />
             <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
             <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
             <element signature="n#!!block;n#insertMovie#0" expanded="false" />
@@ -791,7 +783,7 @@
             <element signature="n#!!block;n#openModal#0" expanded="false" />
             <element signature="n#!!block;n#getMoviePoster#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
-            <marker date="1471808711000" expanded="true" signature="4047:4054" ph="×" />
+            <marker date="1471809546000" expanded="true" signature="4048:4055" ph="×" />
           </folding>
         </state>
       </provider>
@@ -1007,36 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!block;n#showFavorites#0" expanded="false" />
-            <element signature="n#!!block;n#searchMovies#0" expanded="false" />
-            <element signature="n#!!block;n#insertMovies#0" expanded="false" />
-            <element signature="n#!!block;n#clearMovies#0" expanded="false" />
-            <element signature="n#!!block;n#fetchMovies#0" expanded="false" />
-            <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
-            <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
-            <element signature="n#!!block;n#insertMovie#0" expanded="false" />
-            <element signature="n#!!block;n#onClickPoster#0" expanded="false" />
-            <element signature="n#!!block;n#openModal#0" expanded="false" />
-            <element signature="n#!!block;n#getMoviePoster#0" expanded="false" />
-            <element signature="n#!!block;n#closeModal#0" expanded="false" />
-            <marker date="1471808711000" expanded="true" signature="4047:4054" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1053,12 +1015,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/movie_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#874#1171#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#showFavorites#0" expanded="false" />
+            <element signature="n#!!block;n#clearMovies#0" expanded="false" />
+            <element signature="n#!!block;n#fetchMovieDetails#0" expanded="false" />
+            <element signature="n#!!block;n#favoriteMovie#0" expanded="false" />
+            <element signature="n#!!block;n#insertMovie#0" expanded="false" />
+            <element signature="n#!!block;n#onClickPoster#0" expanded="false" />
+            <element signature="n#!!block;n#openModal#0" expanded="false" />
+            <element signature="n#!!block;n#getMoviePoster#0" expanded="false" />
+            <element signature="n#!!block;n#closeModal#0" expanded="false" />
+            <marker date="1471809546000" expanded="true" signature="4048:4055" ph="×" />
           </folding>
         </state>
       </provider>

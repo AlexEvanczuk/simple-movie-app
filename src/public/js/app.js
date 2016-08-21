@@ -34,7 +34,7 @@ function fetchMovies(search_string, favoritesOnly, page, callback) {
       callback(response.movies);
       // In case something breaks in the API, we want to stop rendering after 100 pages
       if(response.more_results && page <= 100){
-        fetchMovies(query_string, favoritesOnly, page + 1, callback);
+        fetchMovies(search_string, favoritesOnly, page + 1, callback);
       };
     }
   };

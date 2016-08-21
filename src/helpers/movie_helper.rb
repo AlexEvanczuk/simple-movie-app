@@ -13,7 +13,7 @@ module MovieHelper
 
     # Use OMDb API to search movies based on query string
     # Note they use 1-based indexing instead of 0-based for pages, so change page accordingly
-    ret = get('/',{ query: {s: query_string, page: page.to_i-1} })
+    ret = get('/',{ query: {s: query_string, page: page.to_i+1} })
 
     if ret["Error"] && ret["Error"] == "Movie not found!"
       return {:movies => [], :more_results => false}
