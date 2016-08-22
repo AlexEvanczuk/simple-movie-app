@@ -4,6 +4,9 @@ This repo contains the data for the GA WDI Instructor code challenge.  The chall
 The link to view this app live is here:
 [Simply Movie App](http://http://simple-movie-app.herokuapp.com/)
 
+I also coded this up in React.js, which can be found here:
+[Simply Movie App (in React)](http://http://simple-movie-app.herokuapp.com/react)
+
 This app is rather simple.  It is built on Sinatra using ActiveRecord to persist data and vanilla HTML/CSS/Javascript to allow the user to search and favorite movies.
 
 The app has a basic javascript file that contains a number of core functions, including user functions (e.g. search and favorite), DOM helper functions (e.g. clear results, insert movies, and open movie details modal), and ajax helper methods (e.g. fetch movies, fetch movie details).
@@ -12,6 +15,29 @@ The app also has a basic controller to receive the ajax requests and serve data.
 There is also a movie helper module that interacts with the IMDB api in a way that is easy for the app controller to digest.
 Namely, it can search movies, get details for an individual movie, and check favorites for a user.
 Authentication is gone by the sintra-simple-authentication gem.  I did not modify or override any of its behavior, such as the provided User model or the login/logout template.
+
+Although there are a number of features that would be added to make this a useful app for personal movie management, there are a number of things that should be added to improve usability and maintainability of the current iteration:
+
+- Loading indicators for AJAX calls
+- Refactor AJAX into a separate API JS library
+- Success indicator after a user has finished favoriting a movie
+- Ability to remove from favorites
+- Logout (right now need to navigate to /logout), improved feedback on login/logout failure, better designed login/signup pages
+
+## Benefits and Additional Challenges of React Implementation
+Benefits:
+The React.js implementation would give beginners the opportunity to understand how the MVC/object-oriented philosophy can be applied to front-end development.  It has many benefits.
+- Exposes the beginner to an extremely popular and widely-used framework
+- Methods related to a particular component of the front-end are necessarily linked to the component via model methods, rather than needing to add event listeners
+- There is a lot more code reusability out of the box, such as with similar looking input buttons.  In theory, with Vanilla javascript, we could design functions that allow us to reuse components such as what I did with insertMovie.
+- A lot less reinventing of the wheel, such as with modals and ideas around event listeners.
+- Using jQuery makes code much cleaner
+
+Additional challenges:
+- A beginniner would need to understand what it means to design code with component modularity in mind
+- Need to learn the differences between using state and props when creating a component, and when to use one or the other
+- Need to figure out using webpack in order to use es6 and other imports, as well as bundle the various dependencies.
+- Need to understand the concept of passing functions as paramters, and what it means to bind an object (this) to a function in order to make sure the correct state or attributes are modified when a function is fired.
 
 ![GA Logo](https://raw.github.com/generalassembly/ga-ruby-on-rails-for-devs/master/images/ga.png)
 

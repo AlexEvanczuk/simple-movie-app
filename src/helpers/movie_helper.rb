@@ -70,10 +70,9 @@ module MovieHelper
   def self.get_movie_favorites(user, page)
     favorites = FavoriteMovies.where(user_id: user.id).map(&:imdb_id)
     paginated_results = favorites.each_slice(10).to_a[page.to_i]
-    next_page_exists = !favorites.each_slice(10).to_a[page.to_i+1].nil?
     if(paginated_results)
       movies = paginated_results.map{|imdb_id| self.get_movie_information(user, imdb_id)}
-      return {:movies => movies, :more_results => next_page_exists}
+      return {:movies => movies, :more_results => true}
     else
       return {:movies => [], :more_results => false}
     end

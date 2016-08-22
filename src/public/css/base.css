@@ -103,7 +103,7 @@ ul {
 }
 
 .search-input {
-    height: 30px;
+    height: 36px;
     width: 270px;
     font-size: 22px;
     padding: 7px;
@@ -112,12 +112,21 @@ ul {
     border: 1px solid #bfbfbf;
 }
 
+.search-input-react {
+    height: 46px;
+    width: 270px;
+    font-size: 22px;
+    padding: 7px;
+    font-family: Helvetica;
+    border-radius: 6px;
+    border: 1px solid #bfbfbf;}
+
 .movie-query-button {
     border: 1px solid #bfbfbf;
     width: 200px;
     text-align: center;
     font-size: 22px;
-    padding-top: 3px;
+    padding-top: 7px;
     border-radius: 6px;
     margin-left: 20px;
     cursor: pointer;
@@ -136,7 +145,7 @@ ul {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 500px;
     height: 440px;
     background-color: #fff;
     border-radius: 17px;
@@ -152,10 +161,6 @@ ul {
     background-color: black;
     opacity: .7;
     z-index: 8000;
-}
-
-.move-poster {
-    border: 1px solid black;
 }
 
 .modal-section {

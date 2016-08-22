@@ -162,6 +162,7 @@ function fetchMovies(search_string, type, page, callback) {
     }
   };
 
+
   if(type == "favorites") {
     uri =  "get_favorites?page=" + page;
   } else {

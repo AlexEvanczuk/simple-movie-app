@@ -27,6 +27,12 @@ get '/' do
   send_file './src/views/index.html'
 end
 
+# Root application in react
+get '/react' do
+  login_required
+  send_file './src/views/index-react.html'
+end
+
 # Search for movies matching a search string or imdb id
 post '/search_movies' do
   login_required
