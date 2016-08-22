@@ -2,10 +2,10 @@
 This repo contains the data for the GA WDI Instructor code challenge.  The challenge prompt is below.
 
 The link to view this app live is here:
-[Simply Movie App](http://http://simple-movie-app.herokuapp.com/)
+[Simply Movie App](http://simple-movie-app.herokuapp.com/)
 
 I also coded this up in React.js, which can be found here:
-[Simply Movie App (in React)](http://http://simple-movie-app.herokuapp.com/react)
+[Simply Movie App (in React)](http://simple-movie-app.herokuapp.com/react)
 
 This app is rather simple.  It is built on Sinatra using ActiveRecord to persist data and vanilla HTML/CSS/Javascript to allow the user to search and favorite movies.
 

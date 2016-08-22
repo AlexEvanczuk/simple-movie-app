@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="262177ae-2a66-4eef-9d76-d3e6eb34ea56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/Application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/ClickableThumbnail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/MovieDetailsModal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/MovieView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/StandardButton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/js/bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/index-react.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.rb" afterPath="$PROJECT_DIR$/src/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helpers/movie_helper.rb" afterPath="$PROJECT_DIR$/src/helpers/movie_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/css/base.css" afterPath="$PROJECT_DIR$/src/public/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/js/app.js" afterPath="$PROJECT_DIR$/src/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/index.html" afterPath="$PROJECT_DIR$/src/views/index.html" />
     </list>
     <ignored path="General Assembly Code Challenge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +51,8 @@
                 <entry file="file://$PROJECT_DIR$/README.md">
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="SPLIT">
-                      <first_editor relative-caret-position="120">
-                        <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                      <first_editor relative-caret-position="225">
+                        <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
                         <folding />
                       </first_editor>
                       <second_editor />
@@ -599,12 +582,12 @@
       <workItem from="1471247324195" duration="2000" />
       <workItem from="1471397998310" duration="25978000" />
       <workItem from="1471813739901" duration="5804000" />
-      <workItem from="1471820988542" duration="6394000" />
+      <workItem from="1471820988542" duration="6460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52646000" />
+    <option name="totallyTimeSpent" value="52712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -991,8 +974,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             <folding />
           </first_editor>
           <second_editor />
