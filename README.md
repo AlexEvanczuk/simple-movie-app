@@ -2,12 +2,12 @@
 This repo contains the data for the GA WDI Instructor code challenge.  The challenge prompt is below.
 
 The link to view this app live is here:
-[Simply Movie App](http://simple-movie-app.herokuapp.com/)
+[Simple Movie App](http://simple-movie-app.herokuapp.com/)
 
 I also coded this up in React.js, which can be found here:
-[Simply Movie App (in React)](http://simple-movie-app.herokuapp.com/react)
+[Simple Movie App (in React)](http://simple-movie-app.herokuapp.com/react)
 
-This app is rather simple.  It is built on Sinatra using ActiveRecord to persist data and vanilla HTML/CSS/Javascript to allow the user to search and favorite movies.
+This app is rather straightforward.  It is built on Sinatra using ActiveRecord to persist data and vanilla HTML/CSS/Javascript to allow the user to search and favorite movies.
 
 The app has a basic javascript file that contains a number of core functions, including user functions (e.g. search and favorite), DOM helper functions (e.g. clear results, insert movies, and open movie details modal), and ajax helper methods (e.g. fetch movies, fetch movie details).
  
@@ -26,7 +26,7 @@ Although there are a number of features that would be added to make this a usefu
 
 ## Benefits and Additional Challenges of React Implementation
 Benefits:
-The React.js implementation would give beginners the opportunity to understand how the MVC/object-oriented philosophy can be applied to front-end development.  It has many benefits.
+- The React.js implementation would give beginners the opportunity to understand how the MVC/object-oriented philosophy can be applied to front-end development.
 - Exposes the beginner to an extremely popular and widely-used framework
 - Methods related to a particular component of the front-end are necessarily linked to the component via model methods, rather than needing to add event listeners
 - There is a lot more code reusability out of the box, such as with similar looking input buttons.  In theory, with Vanilla javascript, we could design functions that allow us to reuse components such as what I did with insertMovie.
